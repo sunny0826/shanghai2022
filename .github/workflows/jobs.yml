@@ -44,7 +44,6 @@ jobs:
           name: python-app
           path: |
             .
-            !venv/
 
   publish:
     runs-on: ubuntu-latest
@@ -55,6 +54,8 @@ jobs:
         with:
           name: python-app
           path: .
+      - name: Check GitHub Status
+        uses: crazy-max/ghaction-github-status@v2
       - name: Gen dummy page
         run: |
           pip install -r requirements.txt
