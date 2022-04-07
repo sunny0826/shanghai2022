@@ -72,5 +72,6 @@ jobs:
           fqdn: shanghai2022.guoxudong.io
           jekyll: false
           verbose: true
+          committer: guoxudong <guoxudong.dev@gmail.com>
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
