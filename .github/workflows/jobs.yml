@@ -52,10 +52,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Download artifact from build job
-          uses: actions/download-artifact@v3
-          with:
-            name: python-app
-            path: .
+        uses: actions/download-artifact@v3
+        with:
+          name: python-app
+          path: .
       - name: Gen dummy page
         run: |
           mkdir public
