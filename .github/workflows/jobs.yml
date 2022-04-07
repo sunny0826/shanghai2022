@@ -57,6 +57,7 @@ jobs:
           path: .
       - name: Gen dummy page
         run: |
+          pip install -r requirements.txt
           mkdir public
           python main.py
       - name: Deploy to GitHub Pages
