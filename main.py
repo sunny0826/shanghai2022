@@ -65,7 +65,7 @@ def generate_html(data):
     template = env.get_template('template.html')
     # template.stream(body).dump('result.html', 'utf-8')
 
-    with open("index.html", 'w') as fout:
+    with open("public/index.html", 'w') as fout:
         html_content = template.render(data)
         fout.write(html_content)  # 写入模板 生成html
 
