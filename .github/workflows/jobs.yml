@@ -69,5 +69,8 @@ jobs:
         with:
           target_branch: gh-pages
           build_dir: public
+          fqdn: shanghai2022.guoxudong.io
+          jekyll: false
+          verbose: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
