@@ -29,8 +29,19 @@ df4['时间'] = df4['时间'].map('4月{}'.format)
 df4['时间'] = df4['时间'] + df4['类型']
 df4 = df4.drop(labels='类型', axis=1)
 df4 = df4.drop([1])
-df = pd.concat([df3, df4]).reset_index(drop=True)
 
+url2 = 'http://m.sh.bendibao.com/news/251728.html'
+response2 = requests.get(url2, headers=headers)
+html_doc2 = str(response2.content, 'utf-8')
+df5 = pd.read_html(html_doc2, encoding='utf-8')[0]
+df5 = df5.drop([0, len(df5) - 1]).fillna(value=0)
+df5.columns = df5.iloc[0]
+df5['时间'] = df5['时间'].map('5月{}'.format)
+df5['时间'] = df5['时间'] + df5['类型']
+df5 = df5.drop(labels='类型', axis=1)
+df5 = df5.drop([1])
+
+df = pd.concat([df3, df4, df5]).reset_index(drop=True)
 
 def loopData(locals):
     arr = []
